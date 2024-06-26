@@ -31,6 +31,10 @@ app.use("/api/v1/otps",otpRouter)
 app.use("/api/v1/requests",requestRouter)
 app.use('/api/v1/bookings',bookingRouter)
 
+app.get("/",(req,res)=>{
+    res.json({message:"hello world from backend"});
+})
+
 // http://localhost:8000/api/v1/users/register
 
 export { app }
