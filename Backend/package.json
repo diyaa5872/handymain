@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "description": "a backend folder for homeservice app",
   "type": "module",
-  "main": "src/index.js",
+  "engines": {
+    "node": "20.x"
+  },
+  "main": "index.js",
   "scripts": {
     "dev": "nodemon -r dotenv/config --experimental-json-modules src/index.js",
-    "start": "node -r dotenv/config --experimental-json-modules src/index.js"
+    "start": "nodemon -r dotenv/config --experimental-json-modules src/index.js"
   },
   "keywords": [
     "javascript",
