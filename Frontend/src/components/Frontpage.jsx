@@ -88,7 +88,7 @@ const Frontpage = () => {
           <div className="card" data-tilt>
             <div className="content">
               <img src="https://i.pinimg.com/236x/30/ce/aa/30ceaa495a034bca77ca7f5c171013ed.jpg" alt="" />
-              <h1>Personalized Guidance</h1>
+              <h1>Personalized Working proffesionals</h1>
               <p>
               “Empowering communities by connecting those in need with opportunities, our home service app is a beacon of hope for those seeking to uplift their lives through meaningful work.”
               </p>

@@ -41,7 +41,7 @@ export default function VerticalLinearStepper() {
     const fetchData = async () => {
       const workerno = localStorage.getItem('workerno');
       try {
-        const response = await axios.get(`http://localhost:8000/api/v1/workers/bookingdetails?workerId=${workerno}&userId=${id}&isCompleted=false`);
+        const response = await axios.get(`/api/v1/workers/bookingdetails?workerId=${workerno}&userId=${id}&isCompleted=false`);
         console.log(response.data);
         if (response.data.length > 0) {
           setJobData(response.data[0]); // Assuming response.data is an array with job objects

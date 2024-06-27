@@ -44,7 +44,7 @@ export default function Useraddress() {
     console.log(userId);
 
     try {
-      const response = await axios.put(`http://localhost:8000/api/v1/users/addaddress?userId=${userId}`, {
+      const response = await axios.put(`/api/v1/users/addaddress?userId=${userId}`, {
         ...address_user
       });
 

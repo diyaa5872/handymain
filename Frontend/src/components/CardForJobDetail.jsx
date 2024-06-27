@@ -51,7 +51,7 @@ export default function JobCard({ onAcceptJob, onGoToJob, onCompletionOfJob, but
   React.useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await axios.get(`http://localhost:8000/api/v1/users/getThatUser?id=${data.userId}`);
+        const response = await axios.get(`/api/v1/users/getThatUser?id=${data.userId}`);
         console.log(response);
         console.log(response.data.fullName)
         setUserData(response.data);
@@ -65,7 +65,7 @@ export default function JobCard({ onAcceptJob, onGoToJob, onCompletionOfJob, but
 
   const handleAcceptJob = async () => {
     try {
-      const accepteddata = await axios.put(`http://localhost:8000/api/v1/requests/accept?workerId=${data.workerId}&userId=${data.userId}&accepted=false&currentstatus='pending'`);
+      const accepteddata = await axios.put(`/api/v1/requests/accept?workerId=${data.workerId}&userId=${data.userId}&accepted=false&currentstatus='pending'`);
       console.log(accepteddata);
       setJobAccepted(true);
       onAcceptJob();
@@ -76,7 +76,7 @@ export default function JobCard({ onAcceptJob, onGoToJob, onCompletionOfJob, but
 
   const handleCancelJob = async () => {
     try {
-      const cancelled = await axios.delete(`http://localhost:8000/api/v1/requests/cancel?userId=${data.userId}&workerId=${data.workerId}&currentstatus='pending'&workStatus='pending'`);
+      const cancelled = await axios.delete(`/api/v1/requests/cancel?userId=${data.userId}&workerId=${data.workerId}&currentstatus='pending'&workStatus='pending'`);
       console.log(cancelled.data);
       setJobAccepted(false);
       navigate('/mainworkerpage');
@@ -87,7 +87,7 @@ export default function JobCard({ onAcceptJob, onGoToJob, onCompletionOfJob, but
 
   const handleFinishJob = async () => {
     try {
-      const finished = await axios.put(`http://localhost:8000/api/v1/requests/completed?userId=${data.userId}&workerId=${data.workerId}&currentstatus='accepted'&isCompleted=false`);
+      const finished = await axios.put(`/api/v1/requests/completed?userId=${data.userId}&workerId=${data.workerId}&currentstatus='accepted'&isCompleted=false`);
       console.log(finished.data);
       onCompletionOfJob();
     } catch (error) {

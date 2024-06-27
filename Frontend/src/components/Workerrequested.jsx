@@ -19,13 +19,13 @@ export default function WorkerRequests() {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const response = await axios.get(`http://localhost:8000/api/v1/workers/requestforworker?workerno=${workerno}&accepted=false`);
+        const response = await axios.get(`/api/v1/workers/requestforworker?workerno=${workerno}&accepted=false`);
         setRequests(response.data);
 
         if (response.data.length > 0) {
           const userIds = response.data.map(item => item.userId);
           const userRequests = await Promise.all(
-            userIds.map(userId => axios.get(`http://localhost:8000/api/v1/workers/work?id=${userId}`))
+            userIds.map(userId => axios.get(`/api/v1/workers/work?id=${userId}`))
           );
           const userResponses = userRequests.map(res => res.data);
           setRequests(userResponses.flat());
@@ -47,13 +47,13 @@ export default function WorkerRequests() {
     const fetchCompletedRequests = async () => {
       setLoading(true);
       try {
-        const response = await axios.get(`http://localhost:8000/api/v1/workers/requesttrueforworker?workerno=${workerno}&accepted=true`);
+        const response = await axios.get(`/api/v1/workers/requesttrueforworker?workerno=${workerno}&accepted=true`);
         setCompletedRequests(response.data);
 
         if (response.data.length > 0) {
           const userIds = response.data.map(item => item.userId);
           const userRequests = await Promise.all(
-            userIds.map(userId => axios.get(`http://localhost:8000/api/v1/workers/work?id=${userId}`))
+            userIds.map(userId => axios.get(`/api/v1/workers/work?id=${userId}`))
           );
           const userResponses = userRequests.map(res => res.data);
           setCompletedRequests(userResponses.flat());

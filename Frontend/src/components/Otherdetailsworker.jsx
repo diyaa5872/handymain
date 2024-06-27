@@ -54,7 +54,7 @@ export default function VerticalLinearStepper() {
     console.log(street, city, state, country, postalCode, contact_no, age, experienceYears, homeVisitFee, description, coverImage);
 
     try {
-      const response = await axios.put(`http://localhost:8000/api/v1/workers/addaddress?workerId=${workerId}`, formData, {
+      const response = await axios.put(`/api/v1/workers/addaddress?workerId=${workerId}`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }

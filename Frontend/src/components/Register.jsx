@@ -51,7 +51,7 @@ export default function SignUp() {
 
     try {
       // Send a POST request to register the user
-      const response = await axios.post('http://localhost:8000/api/v1/users/register', user);
+      const response = await axios.post('/api/v1/users/register', user);
       console.log('Registration successful', response.data);
 
       const userId = response.data.data._id;

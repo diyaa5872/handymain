@@ -48,7 +48,7 @@ export default function Extradetailsform() {
     console.log('Worker ID:', workerId);
 
     try {
-      const response = await axios.put(`http://localhost:8000/api/v1/workers/addextradetails?workerId=${workerId}`,{ ...address});
+      const response = await axios.put(`/api/v1/workers/addextradetails?workerId=${workerId}`,{ ...address});
       console.log('Other details added successfully', response.data);
 
       navigate('/uploadworkerfiles');

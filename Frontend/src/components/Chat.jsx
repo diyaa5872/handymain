@@ -11,7 +11,7 @@ export default function Chatcontainer() {
     const fetchUsername = async () => {
       try {
         const id = localStorage.getItem('userId');
-        const response = await axios.get(`http://localhost:8000/api/v1/users/getThatUser?id=${id}`);
+        const response = await axios.get(`/api/v1/users/getThatUser?id=${id}`);
 
         // Log the entire response for debugging
         console.log('API Response:', response);

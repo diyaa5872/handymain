@@ -51,7 +51,7 @@ export default function SignInworker() {
     }
 
     try {
-      const response = await axios.post('http://localhost:8000/api/v1/workers/login', {
+      const response = await axios.post('/api/v1/workers/login', {
         email,
         password
       });

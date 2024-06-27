@@ -12,7 +12,7 @@ const WorkersByProfession = () => {
   useEffect(() => {
     const fetchWorkers = async () => {
       try {
-        const response = await axios.get(`http://localhost:8000/workers/work/${profession}`);
+        const response = await axios.get(`/api/v1/workers/work/${profession}`);
         setWorkers(response.data);
       } catch (error) {
         console.error('Error fetching workers:', error);

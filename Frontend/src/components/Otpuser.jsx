@@ -20,7 +20,7 @@ export default function Otpuser() {
   const [error, setError] = React.useState('');
 
   const sendOtpHandler = (email) => {
-    axios.post('http://localhost:8000/api/v1/otps/generatingotp', { email })
+    axios.post('/api/v1/otps/generatingotp', { email })
       .then(response => {
         console.log(response.data);
         setOtpSent(true); // Set OTP sent status to true
@@ -33,7 +33,7 @@ export default function Otpuser() {
   const verifyOtpHandler = async (otp, email) => {
     console.log("Verifying OTP:", { otp, email });
     try {
-      const response = await axios.post('http://localhost:8000/api/v1/otps/verifyingotp', { otp, email });
+      const response = await axios.post('/api/v1/otps/verifyingotp', { otp, email });
       console.log("OTP verification response:", response.data);
       navigate('/Useraddress');
     } catch (error) {

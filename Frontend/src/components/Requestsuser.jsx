@@ -23,7 +23,7 @@ export default function Requestsuser() {
     useEffect(() => {
         const fetchUserData = async () => {
             try {
-                const response = await axios.get(`http://localhost:8000/api/v1/requests/requestsuser?userId=${userId}`);
+                const response = await axios.get(`/api/v1/requests/requestsuser?userId=${userId}`);
                 console.log(response.data);
                 setRequests(response.data.requests); // Assuming your backend returns the requests array
                 setLoading(false); // Set loading to false after data fetch
@@ -41,7 +41,7 @@ export default function Requestsuser() {
                 // Assuming each request object has a workerId field
                 const workerIds = requests.map(request => request.workerId);
                 const workersData = await Promise.all(workerIds.map(async (workerId) => {
-                    const response = await axios.get(`http://localhost:8000/api/v1/workers/work?id=${workerId}`);
+                    const response = await axios.get(`/api/v1/workers/work?id=${workerId}`);
                     return response.data; // Adjust this based on your backend response structure
                 }));
                 setWorkers(workersData);

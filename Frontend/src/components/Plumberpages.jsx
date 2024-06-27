@@ -20,7 +20,7 @@ const Plumberpages = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`http://localhost:8000/api/v1/workers/working?profession=${profession}`);
+                const response = await axios.get(`/api/v1/workers/working?profession=${profession}`);
                 setData(response.data);
             } catch (error) {
                 console.error('Error fetching data:', error);

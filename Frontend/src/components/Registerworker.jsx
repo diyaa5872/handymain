@@ -64,7 +64,7 @@ export default function SignUpWorker() {
     }
 
     try {
-      const response = await axios.post('http://localhost:8000/api/v1/workers/register', user);
+      const response = await axios.post('/api/v1/workers/register', user);
 
       const workerno = response.data.data._id;
       localStorage.setItem('workerno', workerno);
