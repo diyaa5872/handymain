@@ -153,7 +153,7 @@ export default function Accountworker() {
               <Stack direction="row" spacing={2}>
                 <Avatar
                   alt="Profile Picture"
-                  src={date?.coverImage ? `http://localhost:8000/temp/${date.coverImage}` : ''}
+                  src={date?.coverImage ? `${date.coverImage}` : ''}
                   sx={{ width: 56, height: 56 }}
                 />
               </Stack>

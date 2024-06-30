@@ -20,7 +20,7 @@ export default function UserCard({ profession, data }) {
   };
   console.log(data);
 
-  const coverImageUrl = data?.coverImage ? `http://localhost:8000/temp/${data.coverImage}` : "";
+  const coverImageUrl = data?.coverImage ? `${data.coverImage}` : "";
   console.log(coverImageUrl);
 
   return (

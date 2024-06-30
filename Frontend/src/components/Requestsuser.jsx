@@ -93,7 +93,7 @@ export default function Requestsuser() {
                             <CardMedia
                                 component="img"
                                 sx={{ width: 151 }}
-                                image={`http://localhost:8000/temp/${workers[index].coverImage}`}
+                                image={`${workers[index].coverImage}`}
                                 alt="Request Cover"
                             />
                         )}
